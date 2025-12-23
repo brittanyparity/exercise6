@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome in Different Languages</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .message {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #667eea;
+            margin: 40px 0;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        button:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-english {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .btn-english:hover {
+            background: linear-gradient(135deg, #5568d3 0%, #653a8f 100%);
+        }
+
+        .btn-spanish {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .btn-spanish:hover {
+            background: linear-gradient(135deg, #e081e8 0%, #e34459 100%);
+        }
+
+        .btn-french {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .btn-french:hover {
+            background: linear-gradient(135deg, #3d9be8 0%, #00d9e8 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome in Different Languages</h1>
+        <div class="message" id="message">Welcome</div>
+        <div class="button-container">
+            <button class="btn-english" onclick="showWelcome('english')">English</button>
+            <button class="btn-spanish" onclick="showWelcome('spanish')">Spanish</button>
+            <button class="btn-french" onclick="showWelcome('french')">French</button>
+        </div>
+    </div>
+
+    <script>
+        function showWelcome(language) {
+            const messageElement = document.getElementById('message');
+            
+            const messages = {
+                english: 'Welcome',
+                spanish: 'Bienvenido',
+                french: 'Bienvenue'
+            };
+
+            // Update message instantly
+            messageElement.textContent = messages[language];
+            
+            // Add a subtle animation effect
+            messageElement.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                messageElement.style.transform = 'scale(1)';
+            }, 200);
+        }
+    </script>
+</body>
+</html>
